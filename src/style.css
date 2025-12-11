@@ -650,6 +650,25 @@ button {
     transition: all 0.4s ease-in-out;
 }
 
+.skills__tool-badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--container-color);
+    color: var(--text-color);
+    border-radius: 0.5rem;
+    font-size: var(--small-font-size);
+    font-weight: var(--font-medium);
+    border: 1px solid var(--first-color-lighter);
+    transition: all 0.3s ease;
+}
+
+.skills__tool-badge:hover {
+    background-color: var(--first-color);
+    color: #fff;
+    border-color: var(--first-color);
+    transform: translateY(-2px);
+}
+
 .skills__open .skills__tools-list {
     max-height: 1000px;
     opacity: 1;
