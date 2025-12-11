@@ -1107,10 +1107,10 @@ button {
 }
 
 .portfolio__card {
-    /* Wider cards: 400px base */
-    flex: 0 0 400px;
-    min-width: 400px;
-    max-width: 400px;
+    /* Mobile-first: 300px base (fits on phones > 320px) */
+    flex: 0 0 300px;
+    min-width: 300px;
+    max-width: 300px;
     background-color: var(--container-color);
     border-radius: 1rem;
     overflow: hidden;
