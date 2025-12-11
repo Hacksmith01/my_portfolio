@@ -27,6 +27,12 @@ const Header: React.FC<HeaderProps> = ({
           Ishan
         </a>
 
+        {/* Overlay to close menu when clicking outside */}
+        <div
+          className={Toggle ? "nav__overlay show-overlay" : "nav__overlay"}
+          onClick={() => showMenu(false)}
+        ></div>
+
         <div className={Toggle ? "nav__menu show-menu" : "nav__menu"} id="nav-menu">
           <ul className="nav__list">
             <li className="nav__item">
