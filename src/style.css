@@ -160,6 +160,67 @@ button {
     color: var(--first-color);
 }
 
+.nav__toggle {
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.nav__close {
+    position: absolute;
+    right: 1.3rem;
+    bottom: .5rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--first-color);
+}
+
+.nav__close:hover {
+    color: var(--first-color-alt);
+}
+
+/* Mobile Menu Styles */
+@media screen and (max-width: 767px) {
+    .nav__menu {
+        position: fixed;
+        bottom: -100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--body-color);
+        padding: 2rem 1.5rem 4rem;
+        box-shadow: 0 -1px 4px rgba(0, 0, 0, .15);
+        border-radius: 1.5rem 1.5rem 0 0;
+        transition: .3s;
+        z-index: var(--z-fixed);
+    }
+}
+
+.show-menu {
+    bottom: 0;
+    /* Slide up */
+}
+
+/* General Layout for Nav List on Mobile */
+@media screen and (max-width: 767px) {
+    .nav__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+
+    .nav__item {
+        text-align: center;
+    }
+
+    .nav__link {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: var(--small-font-size);
+        color: var(--title-color);
+        font-weight: var(--font-medium);
+    }
+}
+
 .nav__btns {
     display: flex;
     align-items: center;
@@ -177,9 +238,6 @@ button {
     color: var(--first-color);
 }
 
-.nav__toggle {
-    display: none;
-}
 
 /* HOME – ONLY SECTION CENTERED VERTICALLY */
 .home {

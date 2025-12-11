@@ -18,6 +18,8 @@ const Header: React.FC<HeaderProps> = ({
   const navLinkClass = (id: string) =>
     `nav__link ${activeSection === id ? 'active-link' : ''}`;
 
+  const [Toggle, showMenu] = React.useState(false);
+
   return (
     <header className={`header ${headerScrolled ? 'scroll-header' : ''}`} id="header">
       <nav className="nav container">
@@ -25,44 +27,45 @@ const Header: React.FC<HeaderProps> = ({
           Ishan
         </a>
 
-        <div className="nav__menu" id="nav-menu">
+        <div className={Toggle ? "nav__menu show-menu" : "nav__menu"} id="nav-menu">
           <ul className="nav__list">
             <li className="nav__item">
-              <a href="#home" className={navLinkClass('home')}>
+              <a href="#home" onClick={() => showMenu(false)} className={navLinkClass('home')}>
                 Home
               </a>
             </li>
             <li className="nav__item">
-              <a href="#about" className={navLinkClass('about')}>
+              <a href="#about" onClick={() => showMenu(false)} className={navLinkClass('about')}>
                 About
               </a>
             </li>
             <li className="nav__item">
-              <a href="#skills" className={navLinkClass('skills')}>
+              <a href="#skills" onClick={() => showMenu(false)} className={navLinkClass('skills')}>
                 Skills
               </a>
             </li>
             <li className="nav__item">
-              <a href="#qualification" className={navLinkClass('qualification')}>
+              <a href="#qualification" onClick={() => showMenu(false)} className={navLinkClass('qualification')}>
                 Qualification
               </a>
             </li>
             <li className="nav__item">
-              <a href="#experience" className={navLinkClass('experience')}>
+              <a href="#experience" onClick={() => showMenu(false)} className={navLinkClass('experience')}>
                 Experience
               </a>
             </li>
             <li className="nav__item">
-              <a href="#portfolio" className={navLinkClass('portfolio')}>
+              <a href="#portfolio" onClick={() => showMenu(false)} className={navLinkClass('portfolio')}>
                 Projects
               </a>
             </li>
             <li className="nav__item">
-              <a href="#contact" className={navLinkClass('contact')}>
+              <a href="#contact" onClick={() => showMenu(false)} className={navLinkClass('contact')}>
                 Contact
               </a>
             </li>
           </ul>
+          <i className="fas fa-times nav__close" onClick={() => showMenu(false)}></i>
         </div>
 
         <div className="nav__btns">
@@ -72,6 +75,10 @@ const Header: React.FC<HeaderProps> = ({
             id="theme-button"
             onClick={toggleTheme}
           ></i>
+
+          <div className="nav__toggle" onClick={() => showMenu(!Toggle)}>
+            <i className="fas fa-bars"></i>
+          </div>
         </div>
       </nav>
     </header>
