@@ -80,7 +80,6 @@ export default function LiquidEther({
   const webglRef = useRef<LiquidEtherWebGL | null>(null);
   const resizeObserverRef = useRef<ResizeObserver | null>(null);
   const rafRef = useRef<number | null>(null);
-  const intersectionObserverRef = useRef<IntersectionObserver | null>(null);
   const isVisibleRef = useRef<boolean>(true);
   const resizeRafRef = useRef<number | null>(null);
 
@@ -1133,7 +1132,7 @@ export default function LiquidEther({
     ro.observe(container);
     resizeObserverRef.current = ro;
 
-        return () => {
+    return () => {
       if (rafRef.current) cancelAnimationFrame(rafRef.current);
       if (resizeObserverRef.current) {
         try {
@@ -1149,7 +1148,7 @@ export default function LiquidEther({
       webglRef.current = null;
     };
 
-  }, [  ]);
+  }, []);
 
   useEffect(() => {
     const webgl = webglRef.current;
