@@ -621,13 +621,20 @@ button {
     /* Width is set dynamically via inline styles */
 }
 
+.skills__list {
+    transition: all 0.4s ease-in-out;
+}
+
 .skills__close .skills__list {
-    height: 0;
+    max-height: 0;
     overflow: hidden;
+    opacity: 0;
 }
 
 .skills__open .skills__list {
-    height: max-content;
+    max-height: 1000px;
+    /* Arbitrary large height */
+    opacity: 1;
     margin-bottom: var(--mb-2-5);
 }
 
@@ -640,31 +647,19 @@ button {
     flex-wrap: wrap;
     gap: 0.75rem;
     padding-left: 2.7rem;
+    transition: all 0.4s ease-in-out;
+}
+
+.skills__open .skills__tools-list {
+    max-height: 1000px;
+    opacity: 1;
     margin-bottom: var(--mb-2-5);
 }
 
-.skills__tool-badge {
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    background-color: var(--container-color);
-    color: var(--text-color);
-    border-radius: 0.5rem;
-    font-size: var(--small-font-size);
-    font-weight: var(--font-medium);
-    border: 1px solid var(--first-color-lighter);
-    transition: all 0.3s ease;
-}
-
-.skills__tool-badge:hover {
-    background-color: var(--first-color);
-    color: #fff;
-    border-color: var(--first-color);
-    transform: translateY(-2px);
-}
-
 .skills__close .skills__tools-list {
-    height: 0;
+    max-height: 0;
     overflow: hidden;
+    opacity: 0;
     margin-bottom: 0;
 }
 
